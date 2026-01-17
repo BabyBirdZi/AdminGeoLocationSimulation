@@ -1,0 +1,7 @@
+{
+  "name": "Admin Geolocation Dashboard (Simulation)",
+  "description": "A high-performance real-time device tracking dashboard simulating POC radios and phones across Tunisia, featuring enterprise management, history tracking, and AI-powered movement analysis.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

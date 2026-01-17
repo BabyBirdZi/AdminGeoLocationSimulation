@@ -1,0 +1,29 @@
+{
+  "name": "admin-geolocation-dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "backend": "node --loader ts-node/esm backend/index.ts",
+    "seed": "node --loader ts-node/esm backend/database/seed.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^1.37.0",
+    "better-sqlite3": "^12.6.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "leaflet": "^1.9.4",
+    "path": "^0.12.7",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-leaflet": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "backend": "node --loader ts-node/esm backend/index.ts",
     "seed": "node --loader ts-node/esm backend/database/seed.ts"
   },

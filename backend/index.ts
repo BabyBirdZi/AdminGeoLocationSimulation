@@ -4,7 +4,7 @@ import cors from 'cors';
 import { apiRouter } from './routes/apiRoutes.ts';
 import { simulationService } from './services/SimulationService.ts';
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
@@ -17,14 +17,18 @@ app.use(express.json() as any);
 app.use('/api', apiRouter as any);
 
 // Start Simulation Engine (Internal Node Service)
-simulationService.startSimulation();
+if (process.env.VERCEL !== '1') {
+  simulationService.startSimulation();
+}
 
-app.listen(PORT, () => {
-  console.log(`
-  🚀 GEOTRACK BACKEND STARTED
-  ---------------------------
-  API URL: http://localhost:${PORT}/api
-  Database: SQLite (tracking.db)
-  Simulation: ACTIVE
-  `);
-});
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`
+    GEOTRACK BACKEND STARTED
+    ------------------------
+    API URL: http://localhost:${PORT}/api
+    Database: SQLite (tracking.db)
+    Simulation: ACTIVE
+    `);
+  });
+}

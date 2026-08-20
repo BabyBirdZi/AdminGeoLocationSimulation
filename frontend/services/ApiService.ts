@@ -1,7 +1,7 @@
 
 import { Enterprise, Device, DeviceLocation } from '../../backend/types.ts';
 
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 export class ApiService {
   static async fetchEnterprises(): Promise<Enterprise[]> {

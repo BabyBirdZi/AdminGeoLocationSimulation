@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+tracking.db-shm
+tracking.db-wal
 
 # Editor directories and files
 .vscode/*
